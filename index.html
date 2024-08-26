@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitatie</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@v0.163.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/"
+          }
+        }
+    </script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="background">
+        <div class="video-container" id="videoContainer">
+            <video autoplay loop muted preload="auto">
+                <source src="hero video invitatie.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script type="module" src="balloons.js"></script>
+
+    <div class="bg">
+        <div class="content">
+            <div class="image-with-text">
+                <div class="text"  id="draggableContainer" data-aos="fade-right">
+                    <h1 draggable="true">H</h1>
+                    <h1 draggable="true">a</h1>
+                    <h1 draggable="true">i</h1>
+                    <span class="space" draggable="true"></span>
+                    <h1 draggable="true">l</h1>
+                    <h1 draggable="true">a</h1>
+                    <br>
+                    <h1 draggable="true">z</h1>
+                    <h1 draggable="true">i</h1>
+                    <h1 draggable="true">u</h1>
+                    <h1 draggable="true">a</h1>
+                    <span class="space" draggable="true"></span>
+                    <h1 draggable="true">m</h1>
+                    <h1 draggable="true">e</h1>
+                    <h1 draggable="true">a</h1>
+                    <p>drag any letter</p>
+                </div>
+                <div class="image" data-aos="fade-left">
+                    <img src="frumos.png" alt="">
+                </div>
+            </div>
+
+            <div id="sceneContainer" class="scene-container" data-aos="fade-up"></div>
+            
+            <div class="image-with-text" data-aos="fade-right">
+                <span class="Sphere">
+                    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+                    <script src="bila.js"></script>
+                </span>
+                <div class="text" id="textContainer" data-aos="fade-left">
+                    <p id="textInvitatie">Te invit la ziua mea din data de 20/09 la Conacul Sasaran din Grosi</p>
+                </div>
+            </div>
+            <p id = "textFinal">Invitatie si site facute cu 🧠 si 🤎 de <a href="https://github.com/drNoris">Noris</a></p>
+        </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            delay : 200
+        });
+    </script>
+</body>
+</html>
