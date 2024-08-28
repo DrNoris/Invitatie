@@ -1,24 +1,41 @@
 window.addEventListener('scroll', function() {
     const videoContainer = document.getElementById('videoContainer');
     
-    // Maximum scroll distance to affect the size of the video container
-    const maxScroll = 500; // Maximum scroll distance after which resizing stops
+    let maxScroll = 500; // Maximum scroll distance after which resizing stops
+    if (window.innerWidth <= 758)
+        maxScroll = 700;
     const minWidth = 50; // Minimum width in viewport width percentage
-    const minHeight = 50; // Minimum height in viewport height percentage
+    let minHeight = 50; // Minimum height in viewport height percentage
+    if (window.innerWidth <= 758)
+        minHeight = 30;
 
-    // Calculate new size based on scroll position
     let scrollPosition = window.scrollY;
+    
+    // Calculate new width and height based on scroll position
     let newWidth = 100 - (scrollPosition / maxScroll) * (100 - minWidth);
     let newHeight = 100 - (scrollPosition / maxScroll) * (100 - minHeight);
 
-    // Ensure the size does not go below minimum values
-    if (newWidth < minWidth) newWidth = minWidth;
+    // Check if the screen width is less than 756px
+    if (window.innerWidth <= 758) {
+        // Do not reduce width, only height
+        newWidth = 100; // Keep the width at 100vw
+    } else {
+        // Ensure the width does not go below the minimum value
+        if (newWidth < minWidth) newWidth = minWidth;
+    }
+
+    // Ensure the height does not go below the minimum value
     if (newHeight < minHeight) newHeight = minHeight;
 
     videoContainer.style.width = newWidth + 'vw';
     videoContainer.style.height = newHeight + 'vh';
-    videoContainer.style.borderRadius = (scrollPosition / 7) + 'px'; // Optional: Rounded corners based on scroll
+
+    if (window.innerWidth <= 758) {
+        videoContainer.style.borderRadius = (scrollPosition / 14) + 'px'; // Optional: Rounded corners based on scroll
+    }
+    else videoContainer.style.borderRadius = (scrollPosition / 7) + 'px';
 });
+
 
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,6 +73,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+function calculateRadius() {
+    const baseRadius = 250; // Raza de bază pentru un ecran mai mare
+    const minRadius = 100; // Raza minimă pentru ecrane foarte mici
+    const screenWidth = window.innerWidth;
+
+    // Calculare radius proporțional cu lățimea ecranului
+    if (window.innerWidth <= 768)
+        return Math.max(minRadius, (screenWidth / 600) * baseRadius);
+    else return 250;
+}
+
 
 const Texts = [
     'Alcool', 'Bere', 'Muzica',
@@ -65,7 +93,7 @@ const Texts = [
   ];
   var tagCloud = TagCloud('.Sphere', Texts, {
     // Sphere radius in px
-    radius: 250,
+    radius: calculateRadius(),
     // animation speed
     // slow, normal, fast
     maxSpeed: 'normal',

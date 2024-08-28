@@ -20,7 +20,7 @@ body {
     top: 10%; /* Fix to the top */
     left: 50%;
     transform: translate(-50%, -10%); 
-    width: 100vw; /* Full viewport width */
+    width: 100vw;
     overflow: hidden;
     transition: width 0.2s ease-out, height 0.2s ease-out, border-radius 0.2s ease-out;
     box-shadow: 8px 10px 10px #252525, -4px 10px 10px #424242;
@@ -32,30 +32,28 @@ body {
     object-fit: cover; /* Ensures the video covers the container */
 }
 
-
-
 .bg {
     overflow: hidden;
     height: 2600px; 
-    width: 3000px;
-    margin-top: 12vh; /* Începe sub containerul video */
+    width: 100vw;
+    margin-top: 12vh;
     position: relative;
-    z-index: 1; /* Asigură-te că conținutul este deasupra fundalului */
+    z-index: 1;
     background-color: #1f1f1f;
 }
 
 .bg::before {
     content: '';
     position: absolute;
-    top: -15%;
-    left: -15%;
-    width: 100%;
-    height: 150%;
-    background: transparent url('noise-transparent.png') repeat 0 0 ;
+    top: -16%;
+    left: -16%;
+    width: 150vw;
+    height: 130%;
+    background: transparent url('noise-transparent.png') repeat 0 0;
     background-size: 25%;
     animation: bg-animation .2s infinite;
     opacity: .7;
-    z-index: -1; /* Asigură-te că fundalul animat este sub conținut */
+    z-index: -1;
 }
 
 @keyframes bg-animation {
@@ -77,13 +75,10 @@ body {
     width: 90vw;
     color: white;
 }
-.content p, h1{
-    padding: 20px;
-}
 
 .image-with-text{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
     display: flex;
     align-items: center; 
     justify-content: center; 
@@ -93,7 +88,7 @@ body {
 }
 
 .text p{
-    font-size: 12px;
+    font-size: 1rem;
     font-style: italic;
     color: rgba(255, 255, 255, 0.8);
 }
@@ -106,12 +101,10 @@ body {
 }
 
 .text{
-    margin: auto;
     overflow: hidden;
     background-color: hsla(0, 0%, 40%, 0.2);
     border-radius: 50px;
     text-align: center;
-    flex-wrap: wrap;
     padding: 3%;
 }
 
@@ -148,17 +141,16 @@ body {
 }
 
 #sceneContainer {
-    width: 50vw; 
+    width: 80vw; 
     height: 80vh;
     display: flex;
     align-items: center; 
     justify-content: center; 
-    width: 100%;
     box-sizing: border-box; 
     margin: auto; 
     z-index: 1;
-    background: rgba(59, 59, 59, 0.03); 
-    border-radius: 8000px;
+    background: rgba(71, 71, 71, 0.05); 
+    border-radius: 200px;
 }
 
 .tagcloud {
@@ -232,4 +224,81 @@ body {
     text-decoration: none;
     color: white;
     font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .background {
+        background-color: #111111;
+        height: 100vh;
+    }
+    
+    .video-container {
+        position: fixed;
+        top: 0; 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        box-shadow: 8px 10px 10px #252525, -4px 10px 10px #424242;
+        transition: width 0.2s ease-out, height 0.2s ease-out, border-radius 0.2s ease-out;
+    }
+    
+    .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .bg {
+        margin-top: 14vh;
+    }
+    /* Ajustează și alte elemente pentru a fi mai responsive */
+    .content {
+        margin: 2vw;
+        width: 96vw;
+    }
+
+    .image-with-text{
+        margin-top: 100px;
+    }
+
+    .text{
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .text h1 {
+        font-size: 5em; /* Diminuează dimensiunea fontului pe ecrane mici */
+    }
+
+    .text h1:hover {
+        font-size: 6em; /* Diminuează dimensiunea fontului pe ecrane mici */
+    }
+
+    #textContainer p {
+        font-size: 30px; /* Diminuează dimensiunea textului pentru invitație */
+    }
+
+    #sceneContainer {
+        width: 80vw;
+        height: 40vh;
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        box-sizing: border-box; 
+        z-index: 1;
+        background: rgba(241, 241, 241, 0.03); 
+        border-radius: 80px;
+    }
+
+    .image-with-text {
+        flex-direction: column; /* Afișează imaginea și textul în coloană */
+    }
+
+    .Sphere{
+        margin-right: 40vw;
+        width: 80vw;
+        height: auto;
+    }
 }
