@@ -81,6 +81,8 @@ function calculateRadius() {
     // Calculare radius proporțional cu lățimea ecranului
     if (window.innerWidth <= 768)
         return Math.max(minRadius, (screenWidth / 600) * baseRadius);
+    else if (window.innerWidth <= 1440 && window.innerWidth >= 1024)
+        return 200;
     else return 250;
 }
 

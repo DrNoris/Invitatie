@@ -307,6 +307,7 @@ body {
     #textContainer {
         width: 80vw;
         margin-left: 0;
+        height: 50vh;
     }
 
     #textContainer p {
@@ -320,10 +321,54 @@ body {
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1700px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
     #textContainer p {
         font-size: 45px; 
         text-align: center;
         padding: 2%;
     }
+
+    #textContainer {
+        height: 50vh;
+        width: auto;
+    }
+
+    #textInvitatie {
+        font-size: 2px;
+    }
+
+    .bg {
+        height: auto;
+    }
+
+    #textFinal {
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1441px) {
+    .bg {
+        height: auto;
+    }
+
+    #textFinal {
+        transform: translateY(25px);
+    }
+
+    #textContainer p {
+        font-size: 53px; 
+        text-align: center;
+        padding: 2%;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .text h1 {
+        font-size: 7em; /* Diminuează dimensiunea fontului pe ecrane mici */
+    }
+
+    .text h1:hover {
+        font-size: 8em; /* Diminuează dimensiunea fontului pe ecrane mici */
+    }
+    
 }
