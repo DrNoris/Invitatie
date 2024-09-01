@@ -141,7 +141,7 @@ body {
 }
 
 #sceneContainer {
-    width: 80vw; 
+    width: 90%; 
     height: 80vh;
     display: flex;
     align-items: center; 
@@ -209,8 +209,8 @@ body {
 #textContainer p{
     font-size: 60px;
     font-style: normal;
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: auto;
     color: white;
 }
 
@@ -225,6 +225,7 @@ body {
     color: white;
     font-style: italic;
 }
+
 
 @media (max-width: 768px) {
     .background {
@@ -252,6 +253,7 @@ body {
 
     .bg {
         margin-top: 14vh;
+        height: auto;
     }
     /* Ajustează și alte elemente pentru a fi mai responsive */
     .content {
@@ -300,5 +302,28 @@ body {
         margin-right: 40vw;
         width: 80vw;
         height: auto;
+    }
+
+    #textContainer {
+        width: 80vw;
+        margin-left: 0;
+    }
+
+    #textContainer p {
+        text-align: center;
+        padding: 2%;
+        font-size: 45px;
+    }
+
+    #textFinal {
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1700px) {
+    #textContainer p {
+        font-size: 45px; 
+        text-align: center;
+        padding: 2%;
     }
 }
